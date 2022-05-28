@@ -1,0 +1,333 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,maximum-scale=1,user-scalable=no">
+    <title>
+        <%=posts.title%>
+    </title>
+    <link rel="icon" href="http://my.teamobi.com/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="http://my.teamobi.com/app/view/css/StyleSheet.css">
+    <link rel="stylesheet" type="text/css" href="http://my.teamobi.com/app/view/css/template.css">
+    <link type="text/css" rel="stylesheet" href="http://my.teamobi.com/beta/app/view/source/css/emoji.css">
+
+    <style>
+        .modal {
+            background-color: rgb(0, 157, 255);
+            position: fixed;
+            top: 100px;
+            left: 400px;
+            padding: 20px 50px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body cz-shortcut-listen="true">
+    <div class="body_body">
+        <div style="
+    font-size: 10px;
+    padding:5px;">
+            <img height="12" src="http://ninjaschool.vn/12.png" style="vertical-align: middle;">
+            <span style="vertical-align: middle;">Các trò chơi dành cho người chơi 12 tuổi trở lên. Chơi quá 180 phút
+                mỗi ngày sẽ có hại cho sức khỏe
+            </span>
+        </div>
+        <div class="left_top"></div>
+        <div class="bg_top">
+            <div class="right_top"></div>
+        </div>
+        <div class="body-content">
+
+            <div id="top">
+                <div class="link-more">
+                    <div class="h">
+                        <div class="bg_tree"></div>
+                        <div class="bg_noel"></div>
+                        <div class="body">
+                            <div id="box_login_ads">
+                                <div class="box_inputboxx" style="text-align:center">
+                                    <div class="box_welcome_team"><span>
+                                            Xin chào <a
+                                                href="http://my.teamobi.com/app/index.php?for=user&amp;do=detail&amp;uid=62224412">
+                                                <%=user.username%>
+                                            </a>
+                                            -
+                                            <a
+                                                href="http://my.teamobi.com/app/index.php?for=message&amp;do=list&amp;sz=10"><img
+                                                    src="http://my.teamobi.com/app/view/images/ano.png"> 0</a> -
+                                            <a href="?for=watch&amp;do=list&amp;p=0&amp;sz=15">Theo dõi (16)</a> -
+                                            <a href="?for=user&amp;do=notify">Thông báo (0)</a> -
+                                            <a href="http://localhost:3000/api/auth/login">Thoát</a>
+                                        </span></div>
+                                </div>
+                                <div align="center">
+                                    <iframe src="" scrolling="no" frameborder="0"
+                                        style="border:none; overflow:hidden; width:100px; height:21px;"
+                                        allowtransparency="true"></iframe>
+                                    <br>
+                                    <p>
+                                        <a href="http://pay.teamobi.com/?game=my"><b>
+                                                Nạp Lượng </b></a>
+                                        - <a href="http://my.teamobi.com/app/?for=event&amp;do=resetpass"><b>
+                                                Quên mật khẩu </b></a><br>
+                                        <a href="index.php?for=forum&amp;do=list&amp;uid=173942156&amp;p=0&amp;sz=15"
+                                            title="V/v mất mật khẩu, tài khoản và vật phẩm trong ngày 23/7/2015">
+                                        </a><a href="http://my.teamobi.com/beta/forum.html"><b>
+                                                MXH TeaMobi Beta</b></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="box_forums">
+                                <div class="box_list_parent">
+                                    <div class="box_parent_list_next">
+                                        <div class="box_phantrang">
+                                            <div class="backlink">
+                                                <a style="color:#fff;" href="http://localhost:3000/api/posts/home">Quay
+                                                    lại</a>
+                                            </div>
+                                            <div class="pagination"></div>
+                                        </div>
+                                    </div>
+                                    <form>
+                                        <div class="box_list_parent_next">
+                                            <table cellpadding="0" cellspacing="0" width="99%" border="0"
+                                                style="table-layout:fixed;word-wrap: break-word;">
+                                                <tbody>
+                                                    <tr>
+                                                        <td width="45px;" class="box_list_c_s">
+                                                            <img class="avatar" src="" alt="samcandy98">
+                                                            <div class="box_bai_gui">Bài:395</div>
+                                                            <div
+                                                                style="text-align:center ;height:8px;vertical-align: top;">
+
+                                                            </div>
+                                                        </td>
+                                                        <td class="box_list_b_s">
+                                                            <div class="box_list_ads">
+                                                                <div class="box_oxx_member"><span>
+
+                                                                        <a href=""
+                                                                            title="<%= posts.author.username %>"></a>
+                                                                        <%= posts.author.username %>
+                                                                            </a>
+                                                                    </span>
+                                                                    <span style="float:right;margin-top:-8px;">
+                                                                        <button name="watch" type="submit"
+                                                                            value="submit">Theo dõi</button>
+                                                                    </span>
+                                                                </div>
+                                                                <div class="box_title_bviet">
+                                                                    <%= posts.title %>
+                                                                        <button type="submit" class="edit"
+                                                                            style="color:green"><a
+                                                                                href="http://localhost:3000/api/posts/edit/<%=posts._id%>">edit</a></button>
+                                                                        <button type="submit" style="color:red"
+                                                                            class="delete"
+                                                                            id="deletePost">delete</button>
+                                                                </div>
+                                                                <div class="box_ndung_bviet">
+                                                                    <%= posts.content %><br>
+                                                                        <center></center>
+                                                                </div>
+                                                                <div class="box_timee_bviet">
+                                                                    <span>
+                                                                        <i>
+                                                                            Cách đây 5 ngày</i>
+                                                                    </span>
+                                                                    <a style="float:right;padding-right: 3px;"
+                                                                        href="?for=forum&amp;do=list&amp;uid=214636825&amp;p=0&amp;sz=15&amp;like=214636825&amp;u=18384841"><img
+                                                                            src="http://my.teamobi.com/app/images/img/like.png">
+                                                                    </a>
+                                                                </div>
+
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p></p>
+
+                                            <p></p>
+                                            <!-- ==========comment=============== -->
+                                            <% comments.forEach(function(element){ %>
+                                                <table cellpadding="0" cellspacing="0" width="99%" border="0"
+                                                    style="table-layout:fixed;word-wrap: break-word;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="45px;" class="box_list_c">
+                                                                <img class="avatar" src="" alt="Liiqv">
+                                                                <div class="box_bai_gui">Bài:321</div>
+                                                                <div
+                                                                    style="text-align:center ;height:10px;vertical-align: top;">
+
+                                                                </div>
+                                                            </td>
+                                                            <td class="box_list_b">
+                                                                <div class="box_list_ads">
+                                                                    <div class="box_oxx_member"><span>
+
+                                                                            <a href="" title=""></a>
+                                                                            <%=element.author%>
+                                                                                </a>
+                                                                        </span>
+                                                                        <span style="float:right;padding-right: 3px;">#
+                                                                            1
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="box_title_bviet"></div>
+                                                                    <div class="box_ndung_bviet">
+                                                                        <%=element.content%> <br>
+                                                                            <center></center>
+                                                                    </div>
+                                                                    <div class="box_timee_bviet">
+                                                                        <span>
+                                                                            <i>
+                                                                                Cách đây 5 ngày</i>
+                                                                        </span>
+                                                                        <a style="float:right;padding-right: 3px;"
+                                                                            href="?for=forum&amp;do=next&amp;uid=214636825&amp;q=214636826&amp;u=Liiqv&amp;box=7">
+                                                                            <img
+                                                                                src="http://my.teamobi.com/app/images/img/binhluan.png">
+                                                                        </a>
+                                                                        <a style="float:right;padding-right: 3px;"
+                                                                            href="?for=forum&amp;do=list&amp;uid=214636825&amp;p=0&amp;sz=15&amp;likec=214636826&amp;u=147492989"><img
+                                                                                src="http://my.teamobi.com/app/images/img/like.png">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="box_timee_bviet" style="padding:3px;">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <% }); %>
+                                        </div>
+                                        <div class="box_parent_list_next" style="margin:0px;text-align:right;">
+                                            <div class="box_phantrang">
+                                                <div class="pagination"></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- comment -->
+                                <div class="box_list_chuyenmuc">
+                                    <div class="box_midss">
+                                        <form method="POST" name="UpdateCM" action="/api/posts/<%=posts._id%>">
+                                            <div class="box_comment_new">
+                                                <table cellpadding="0" cellspacing="0" width="99%" border="0"
+                                                    style="table-layout:fixed;word-wrap: break-word;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td width="45px;" class="box_list_c">
+                                                                <img class="avatar" src="" alt="">
+                                                            </td>
+                                                            <td class="box_list_b">
+                                                                <div class="box_list_ads">
+                                                                    <div class="box_top_name">
+                                                                        <div class="box_topname">
+                                                                            <a name="traloi">
+                                                                                <!-- <input type="hidden" name="t"
+                                                                                    value="1"> -->
+                                                                                <!-- <input type="hidden" name="box_id"
+                                                                                    value=""><input name="txtbox"
+                                                                                    type="hidden" value="214636825"> -->
+                                                                            </a>
+                                                                        </div>
+                                                                        <div class="box_topname">
+                                                                            <input width="99%" name="content"
+                                                                                type="text" rows="3"> </input>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td>
+                                                                <div class="box_list_cnang" style="padding-top: 3px;">
+                                                                    <!-- <input type="hidden" value="" name=""> -->
+                                                                    <button name="" type="submit" value="submit">
+                                                                    </button>
+                                                                    <!-- <button style="width:80px;background-image:none;"
+                                                                        name="UpdateIM" type="submit" value="submit">Gửi
+                                                                        ảnh</button> -->
+                                                                </div>
+                                                            </td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div><br>
+                    </div>
+                </div>
+                <div class="left_b_bottom">
+                    <div class="right_b_bottom">
+                        <div class="footer">
+                            <div class="left_bottom"></div>
+                            <div class="right_bottom"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>Giấy phép thiết lập Mạng Xã Hội trên mạng số: 374/GP-BTTTT <br>do Bộ Thông Tin và Truyền
+                        Thông
+                        cấp ngày: 07/08/2015</p>
+                    <b>Bản quyền 2011 TeaMobi.</b> <a style="color: #000;font-size:10px;"
+                        href="http://teamobi.com/dieukhoan.htm">Điều khoản sử dụng</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- form delete -->
+    <form class="modal" tabindex="-1" role="dialog" action="http://localhost:3000/api/posts/<%=posts._id%>"
+        method="DELETE">
+        <div class="modal-dialog" role="document">
+            <form class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Xóa bài viết</h5>
+                    <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button> -->
+                </div>
+                <div class="modal-body">
+                    <p>Bạn có chắn chắn muốn xóa bài viết này?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" value="submit">Delete</button>
+                    <button type="button" class="btn btn-secondary close" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </form>
+    <script>
+        let del = document.getElementById("deletePost")
+        let modal = document.querySelector(".modal");
+        let close = document.querySelector(".close")
+        modal.style.display = "none";
+
+        del.onclick = function () {
+            modal.style.display = "block";
+        }
+        close.onclick = function () {
+            modal.style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>
